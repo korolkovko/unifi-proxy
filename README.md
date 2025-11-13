@@ -38,11 +38,14 @@ The proxy automatically routes traffic for these Unifi domains:
 
 3. **Configure environment variables** in Railway dashboard:
    ```env
-   PORT=443
-   HEALTH_PORT=3000
    ALLOWED_IPS=YOUR_WAN_IP
    LOG_LEVEL=info
    ```
+
+   **Important Notes:**
+   - `PORT` - Don't set manually, Railway auto-assigns (will be exposed as 443 externally)
+   - `ALLOWED_IPS` - **Must** be set to your WAN IP for security
+   - `HEALTH_PORT` - Optional, defaults to 3000
 
 4. **Get your Railway deployment URL** - Railway will provide a public IP/domain
 
